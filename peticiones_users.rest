@@ -1,0 +1,60 @@
+@host = http://localhost
+@port = 8000
+
+### obtener un usuario por ID
+GET {{host}}:{{port}}/users/3
+Content-Type: application/json
+Authorization: Bearer (token generado)
+
+### obtener un usuario por ID
+GET {{host}}:{{port}}/users
+
+### obtener un usuario por ID
+GET {{host}}:{{port}}/users/age/12/24
+
+### insertar un nuevo usuario
+POST {{host}}:{{port}}/auth/register
+Content-Type: application/json
+
+{
+    "name": "Juan Antonio",
+    "surname": "Pérez",
+    "age": 43,
+    "mail": "juanan2@gmail.com",
+    "status": 1,
+    "password": "123456",
+    "rol": "admin"
+  }
+
+### borrar un usuario por ID
+DELETE {{host}}:{{port}}/users/16
+
+### actualizar un usuario
+PUT {{host}}:{{port}}/users/21
+Content-Type: application/json
+
+{
+  "id":21,
+  "name": "Juan Antonio",
+  "surname": "Pérez",
+  "age": 43,
+  "mail": "juanan@gmail.com",
+  "status": 1,
+  "password": "123456",
+  "rol": "admin"
+  }
+
+
+### login de usuario
+POST {{host}}:{{port}}/auth/login
+Content-Type: application/json
+
+{
+  "mail": "juanan@gmail.com",
+  "password": "123456"
+}
+
+
+
+
+

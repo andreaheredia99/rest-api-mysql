@@ -1,0 +1,14 @@
+## Para estas navidades turron de chocolate. Quiero que me hagais.
+     - Tabla de productos con campos.
+           - id, title, price, quantity (cantidad stock), status
+     - Relacioneis la tabla con el usuario (que tipo de relacion es 1-1, 1-N o n-n y por qué). Creeis las relaciones dentro de la BBDD con todo lo que ello conlleve.
+     - Crear un CRUD (rutas, modelos y controladores) completo en FastAPI que me permita:
+             - Insertar un producto completo
+             - Obtener un listado de productos que esten disponibles (status = 1 )
+             - Obtener un producto por id
+             - Obtener un producto/s por titulo (busqueda con LIKE SQL => includes de javascript) 
+                 - Leche Desnatada => leche 
+             - Borrar un producto por id
+             - Actualizar un producto por id
+             - Filtrar productos por precio 10 - 20 euros
+             - Filtrar producto por cantidad

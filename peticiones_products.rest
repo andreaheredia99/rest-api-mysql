@@ -1,0 +1,59 @@
+@host = http://localhost
+@port = 8000
+
+### obtener todos los productos
+GET {{host}}:{{port}}/products
+
+
+### insertar producto completo
+POST {{host}}:{{port}}/products/
+Content-Type: application/json
+
+{
+    "title": "Botines de tacón",
+    "price": 79.99,
+    "status": 0,
+    "quantity": 15
+  }
+
+
+### Obtener productos disponibles (status=1)
+GET {{host}}:{{port}}/products/
+Content-Type: application/json
+
+
+### Obtener producto por ID
+GET {{host}}:{{port}}/products/5
+Content-Type: application/json
+
+
+### Obtener producto por titulo
+GET {{host}}:{{port}}/products/filter/name?title=impermeable
+
+# ?, indicamos al navegador que empiezan los query parameters (parametros de consulta)
+
+
+
+### Borrar producto por id
+DELETE {{host}}:{{port}}/products/10
+
+
+### Actualizar un producto por id
+PUT {{host}}:{{port}}/products/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "Camiseta básica",
+  "price": 13.99,
+  "quantity": 70,
+  "status": 1
+}
+
+
+### Filtrar productos por precio 10 - 20 euros (min y max)
+GET {{host}}:{{port}}/products/filter/price/12/60
+
+
+### Filtrar producto por cantidad
+GET {{host}}:{{port}}/products/filter/quantity/10?compare=lt
